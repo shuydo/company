@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" href="css/norm.css" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Jost&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="css/style.css" />
+
+    <title>Company</title>
+  </head>
+
+  <body>
+    <div class="container">
+      <header>
+        <nav>
+          <ul>
+            <li class="nav-item">
+              <a href="#" class="nav-link">Shop</a>
+            </li>
+
+            <li class="nav-item">
+              <a href="#" class="nav-link">Discover</a>
+            </li>
+
+            <li class="nav-logo"><a href="#" class="logo">Company</a></li>
+
+            <li class="nav-search">
+              <input class="search" type="search" placeholder="Search" />
+              <img src="img/search.svg" alt="Search" />
+            </li>
+
+            <li class="nav-item"><a href="#" class="nav-link">Cart</a></li>
+
+            <li class="nav-social">
+              <a href="#" class="social"
+                ><img src="img/fb.svg" alt="fBook"
+              /></a>
+            </li>
+
+            <li class="nav-social">
+              <a href="#" class="social"
+                ><img src="img/insta.svg" alt="Instagram"
+              /></a>
+            </li>
+
+            <li class="nav-toggler">
+              <input class="fav" type="checkbox" name="fav" id="favToggler" />
+              <img src="img/heart.svg" alt="heart" />
+            </li>
+
+            <li class="nav-toggler">
+              <input
+                class="theme"
+                type="checkbox"
+                name="theme"
+                id="themeToggler"
+              />
+              <img src="img/theme.svg" alt="theme" />
+            </li>
+          </ul>
+        </nav>
+      </header>
+
+      <main>
+        <div class="temlplates">
+          <div class="temlplate-1"></div>
+          <div class="temlplate-2"></div>
+          <span>View</span>
+        </div>
+
+        <div class="temlplate-choice">
+          <p class="choice-1">ITEM</p>
+          <p class="choice-2">PHOTO</p>
+        </div>
+
+        <aside>
+          <span class="title">ITEM NAME</span>
+          <span class="price">$235.00</span>
+          <button class="personalise">Personalise</button>
+          <!-- Element “div” not allowed as child of element “button” in this context. (Suppressing further errors from this subtree.) -->
+          <button class="add">
+            Add to Cart
+            <div class="square">
+              <img src="img/plus.svg" alt="Plus" />
+            </div>
+          </button>
+
+          <div class="note-1">*Free delivery on all orders over USD $50</div>
+          <div class="note-2">*Check availability in boutiques</div>
+
+          <select class="materials">
+            <option value="Material">Material</option>
+          </select>
+
+          <select class="dimensions">
+            <option value="Dimensions">Dimensions</option>
+          </select>
+        </aside>
+      </main>
+
+      <footer>
+        <nav>
+          <ul>
+            <li>Cart</li>
+            <li>Overview</li>
+            <li>Boutique</li>
+            <li>About Us</li>
+            <li>FAQ</li>
+          </ul>
+        </nav>
+
+        <span> Item section name </span>
+      </footer>
+    </div>
+  </body>
+</html>

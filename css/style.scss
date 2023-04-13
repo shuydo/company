@@ -1,0 +1,272 @@
+$bg: rgb(231, 231, 231);
+
+body {
+  background-color: #1e1e1e;
+  font-family: "Jost", sans-serif;
+}
+
+a {
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+img {
+  display: block;
+}
+
+//buttons here?
+
+.container {
+  background-color: #fff;
+  width: 1440px;
+  margin: 0 auto;
+}
+
+//163 163 394 357 163 50*4
+header {
+  height: 55px;
+}
+
+nav ul {
+  display: flex;
+  align-items: center;
+
+  li {
+    height: 36px;
+    // height: 100%;
+    padding-top: 14px;
+    text-align: center;
+    // outline: 1px solid red;
+  }
+
+  li:not(:last-child) {
+    border-right: 1px solid;
+  }
+
+  .nav-item {
+    // display: block;
+    width: 163px;
+  }
+
+  .nav-logo {
+    width: 394px;
+    position: relative;
+  }
+
+  .nav-search {
+    position: relative;
+    flex: 1;
+
+    & img {
+      position: absolute;
+      left: 110px;
+      top: 20px;
+    }
+  }
+
+  .nav-social,
+  .nav-toggler {
+    width: 50px;
+  }
+  // ---------- inside ------------
+  .nav-link {
+    font-size: 22px;
+    color: black;
+  }
+
+  .logo {
+    font-size: 32px;
+    color: black;
+    letter-spacing: 0.64em;
+    text-transform: uppercase;
+  }
+
+  .search {
+    width: calc(100% - 24px);
+    height: 29px;
+    text-align: center;
+
+    background-color: $bg;
+    border-radius: 48px;
+    border: 1px solid black;
+    padding-bottom: 0;
+
+    &::placeholder {
+      font-size: 22px;
+      color: black;
+      vertical-align: bottom;
+      line-height: 1;
+    }
+  }
+
+  .fav,
+  .theme {
+    display: none; // opacity: 0;
+    margin: 0 auto;
+  }
+}
+
+// ================ MAIN
+main {
+  margin-top: 160px;
+  padding-left: 51px;
+  display: flex;
+}
+
+.temlplates {
+  text-align: center;
+
+  span {
+    display: block;
+    font-size: 22px;
+    margin-top: 30px;
+  }
+}
+
+.temlplate-1,
+.temlplate-2 {
+  width: 111px;
+  height: 139px;
+}
+
+.temlplate-1 {
+  background: linear-gradient(180deg, #675e9d 0%, #9d5e84 100%);
+  border: 1px solid #000000;
+}
+
+.temlplate-2 {
+  background: linear-gradient(
+    180deg,
+    rgba(103, 94, 157, 0.5) 0%,
+    rgba(157, 94, 132, 0.5) 100%
+  );
+  border: 1px solid rgba(0, 0, 0, 0.7);
+
+  margin-top: 52px;
+}
+
+.temlplate-choice {
+  width: 475px;
+  height: 591px;
+  margin-left: 119px;
+  background: linear-gradient(180deg, #675e9d 0%, #9d5e84 100%);
+  border: 1px solid #000000;
+  box-shadow: 7px 13px 0px rgba(0, 0, 0, 0.75);
+
+  text-align: center;
+  color: white;
+  font-size: 32px;
+  letter-spacing: 0.64em;
+}
+
+.choice-2 {
+  margin-top: 400px;
+}
+//? как будут выдержаны зазоры между строками, если явно их не задавать, но указывать высоты строк?
+aside {
+  margin-left: 120px;
+  width: 443px;
+
+  font-size: 22px;
+
+  .title {
+    display: block;
+    font-size: 22px;
+    line-height: calc(32 / 22);
+  }
+
+  .price {
+    font-size: 22px;
+    line-height: calc(32 / 22);
+  }
+
+  button {
+    height: 68px;
+    width: 100%;
+    background-color: #fff;
+    border: 1px solid black;
+  }
+
+  .personalise {
+    margin-top: 30px;
+  }
+
+  .add {
+    position: relative;
+    margin-top: 22px;
+    color: white;
+    background-color: black;
+  }
+
+  .square {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 66px;
+    height: 66px;
+    background-color: #fff;
+    top: 0;
+    right: 0;
+    // border: 1px solid black;
+  }
+
+  .note-1 {
+    margin-top: 28px;
+    line-height: calc(32 / 22);
+  }
+
+  .materials,
+  .dimensions {
+    width: 100%;
+    height: 68px;
+    text-align: center;
+    appearance: none;
+
+    background-image: url(../img/arrow.svg);
+    background-repeat: no-repeat;
+    background-position: right 0.7em top 50%, 0 0;
+    background-size: 0.65em auto, 100%;
+  }
+
+  .materials {
+    margin-top: 95px;
+  }
+
+  .dimensions {
+    margin-top: 22px;
+  }
+}
+// ========== footer
+footer {
+  margin-top: 173px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  
+
+  nav {
+    ul li{
+      width: 163px;
+    }
+
+    li:first-child{
+      color: white;
+      background-color: black;
+    }
+
+    li:last-child{
+      border-right: 1px solid black;
+    }
+  }
+
+  span {
+    // flex: 1;
+    text-transform: uppercase;
+    margin: 0 auto;
+  }
+}
