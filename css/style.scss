@@ -1,4 +1,35 @@
-$bg: rgb(231, 231, 231);
+:root {
+  --bg-color: white;
+  --text-color: black;
+
+  --border-color: black;
+
+  --bg-inverse-color: black;
+
+  --text-color-onDark: white;
+  --bg-search: #e7e7e7;
+
+  --shadow-color: 0, 0, 0; //& border-color 4 template-2
+  --svg-colour-state: invert(0);
+  --arrow4currTheme: url(../img/arrow.svg);
+}
+
+[dark] {
+  --bg-color: black;
+  --text-color: white;
+
+  --border-color: white;
+
+  --bg-inverse-color: white;
+
+  --text-color-onDark: black;
+  --bg-search: #181818;
+
+  --shadow-color: 255, 255, 255;
+  --svg-colour-state: invert(1);
+
+  --arrow4currTheme: url(../img/arrow_white.svg);
+}
 
 body {
   background-color: #1e1e1e;
@@ -19,16 +50,25 @@ img {
 }
 
 //buttons here?
+button {
+  height: 68px;
+  width: 100%;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  border: 1px solid var(--border-color);
+  box-sizing: border-box;
+}
 
-.container {
-  background-color: #fff;
+.canvas {
+  color: var(--text-color);
+  background-color: var(--bg-color);
   width: 1440px;
   margin: 0 auto;
 }
 
-//163 163 394 357 163 50*4
+//163*2 394 357 163 50*4
 header {
-  height: 55px;
+  height: 50px;
 }
 
 nav ul {
@@ -37,10 +77,28 @@ nav ul {
 
   li {
     height: 36px;
-    // height: 100%;
     padding-top: 14px;
     text-align: center;
-    // outline: 1px solid red;
+
+    svg {
+      width: 25px;
+      height: 22px;
+    }
+
+    label,
+    img {
+      margin: 0 auto;
+    }
+    
+    label{
+      display: block;
+      width: 100%;
+      height: 100%;
+    }
+
+    input:checked + svg {
+      fill: red;
+    }
   }
 
   li:not(:last-child) {
@@ -75,12 +133,12 @@ nav ul {
   // ---------- inside ------------
   .nav-link {
     font-size: 22px;
-    color: black;
+    color: var(--text-color);
   }
 
   .logo {
     font-size: 32px;
-    color: black;
+    color: var(--text-color);
     letter-spacing: 0.64em;
     text-transform: uppercase;
   }
@@ -90,23 +148,26 @@ nav ul {
     height: 29px;
     text-align: center;
 
-    background-color: $bg;
+    background-color: var(--bg-search);
     border-radius: 48px;
-    border: 1px solid black;
+    border: 1px solid var(--border-color);
     padding-bottom: 0;
 
     &::placeholder {
       font-size: 22px;
-      color: black;
+      color: var(--text-color);
+      opacity: 1; //4 fF
       vertical-align: bottom;
       line-height: 1;
     }
   }
 
-  .fav,
-  .theme {
-    display: none; // opacity: 0;
-    margin: 0 auto;
+  // .fav,
+  // .theme
+  input[type="checkbox"] {
+    position: absolute;
+    appearance: none;
+    // text-align: center; // margin: 0 auto;
   }
 }
 
@@ -126,7 +187,7 @@ main {
     margin-top: 30px;
   }
 }
-
+//different border colors in themes & templates
 .temlplate-1,
 .temlplate-2 {
   width: 111px;
@@ -135,7 +196,8 @@ main {
 
 .temlplate-1 {
   background: linear-gradient(180deg, #675e9d 0%, #9d5e84 100%);
-  border: 1px solid #000000;
+  border: 1px solid var(--border-color);
+  // border: 1px solid #FFFFFF;in Dark
 }
 
 .temlplate-2 {
@@ -144,7 +206,7 @@ main {
     rgba(103, 94, 157, 0.5) 0%,
     rgba(157, 94, 132, 0.5) 100%
   );
-  border: 1px solid rgba(0, 0, 0, 0.7);
+  border: 1px solid rgba(var(--shadow-color), 0.7);
 
   margin-top: 52px;
 }
@@ -154,8 +216,9 @@ main {
   height: 591px;
   margin-left: 119px;
   background: linear-gradient(180deg, #675e9d 0%, #9d5e84 100%);
-  border: 1px solid #000000;
-  box-shadow: 7px 13px 0px rgba(0, 0, 0, 0.75);
+
+  border: 1px solid var(--border-color);
+  box-shadow: 7px 13px 0px rgba(var(--shadow-color), 0.75);
 
   text-align: center;
   color: white;
@@ -166,7 +229,6 @@ main {
 .choice-2 {
   margin-top: 400px;
 }
-//? как будут выдержаны зазоры между строками, если явно их не задавать, но указывать высоты строк?
 aside {
   margin-left: 120px;
   width: 443px;
@@ -184,13 +246,6 @@ aside {
     line-height: calc(32 / 22);
   }
 
-  button {
-    height: 68px;
-    width: 100%;
-    background-color: #fff;
-    border: 1px solid black;
-  }
-
   .personalise {
     margin-top: 30px;
   }
@@ -198,8 +253,8 @@ aside {
   .add {
     position: relative;
     margin-top: 22px;
-    color: white;
-    background-color: black;
+    color: var(--text-color-onDark);
+    background-color: var(--bg-inverse-color);
   }
 
   .square {
@@ -209,10 +264,9 @@ aside {
     align-items: center;
     width: 66px;
     height: 66px;
-    background-color: #fff;
+    background-color: var(--bg-color);
     top: 0;
-    right: 0;
-    // border: 1px solid black;
+    right: 0; // border: 1px solid var(--border-color);
   }
 
   .note-1 {
@@ -227,7 +281,13 @@ aside {
     text-align: center;
     appearance: none;
 
-    background-image: url(../img/arrow.svg);
+    background-color: var(--bg-color);
+    color: var(--text-color);
+
+    border: 1px solid var(--border-color);
+
+    background-image: var(--arrow4currTheme);
+
     background-repeat: no-repeat;
     background-position: right 0.7em top 50%, 0 0;
     background-size: 0.65em auto, 100%;
@@ -244,29 +304,38 @@ aside {
 // ========== footer
 footer {
   margin-top: 173px;
+  font-size: 22px;
   height: 50px;
   display: flex;
   align-items: center;
-  
 
   nav {
-    ul li{
+    ul li {
       width: 163px;
     }
 
-    li:first-child{
-      color: white;
-      background-color: black;
+    li:first-child {
+      color: var(--text-color-onDark);
+      background-color: var(--bg-inverse-color);
     }
 
-    li:last-child{
-      border-right: 1px solid black;
+    li:last-child {
+      border-right: 1px solid var(--border-color);
     }
   }
 
   span {
-    // flex: 1;
     text-transform: uppercase;
     margin: 0 auto;
+  }
+}
+// ======================= picture inversing ===============
+.nav-search,
+.fav,
+.nav-toggler,
+.social {
+  img,
+  svg {
+    filter: var(--svg-colour-state); // -webkit-filter - safari 6.0 - 9.0
   }
 }
