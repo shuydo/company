@@ -1,13 +1,13 @@
 // * {  margin: 0;  padding: 0;}
-@import './norm';
-@import './icons';
+@import "./norm";
+@import "./icons";
 
 :root {
-  --bg-color: white; 
+  --bg-color: white;
   --color: black;
 
   --shadow-color: 0, 0, 0; //& border-color 4 template-2  // --svg-colour-state: invert(0);
-  --arrow4currTheme: url(../img/arrow.svg);
+  --arrow4currTheme: url(../../img/arrow.svg);
 }
 
 // [dark],
@@ -15,8 +15,13 @@
   --bg-color: black;
   --color: white;
 
-  --shadow-color: 255, 255, 255;  // --svg-colour-state: invert(1);
-  --arrow4currTheme: url(../img/arrow_white.svg);
+  --shadow-color: 255, 255, 255; // --svg-colour-state: invert(1);
+  --arrow4currTheme: url(../../img/arrow_white.svg);
+}
+
+* {
+  padding: 0;
+  margin: 0;
 }
 
 body {
@@ -49,6 +54,11 @@ button {
 }
 
 .canvas {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
   color: var(--color);
   background-color: var(--bg-color);
   width: 1440px;
@@ -164,7 +174,7 @@ nav ul {
 
 // ================ MAIN
 main {
-  margin-top: 160px;
+  // margin-top: 160px;
   padding-left: 51px;
   display: flex;
 }
@@ -202,6 +212,12 @@ main {
 }
 
 .template-choice {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  box-sizing: border-box;
+  padding: 100px 0;
   width: 475px;
   height: 591px;
   margin-left: 119px; // background: linear-gradient(180deg, #675e9d 0%, #9d5e84 100%);
@@ -213,10 +229,6 @@ main {
   color: white;
   font-size: 32px;
   letter-spacing: 0.64em;
-}
-
-.choice-txt-2 {
-  margin-top: 400px;
 }
 
 aside {
@@ -276,6 +288,7 @@ aside {
     border: 1px solid var(--color);
 
     background-image: var(--arrow4currTheme);
+    // background-image: var(--arrow4currTheme);
 
     background-repeat: no-repeat;
     background-position: right 0.7em top 50%, 0 0;
@@ -292,7 +305,7 @@ aside {
 }
 // ========== footer
 footer {
-  margin-top: 173px;
+  // margin-top: 173px;
   font-size: 22px;
   line-height: 227.272727%; /* 50/22 */ // height: 50px;
   display: flex;
@@ -316,7 +329,7 @@ footer {
 
   span {
     text-transform: uppercase;
-    margin: 0 auto; 
+    margin: 0 auto;
   }
 }
 // ======================= pic inversing ===============

@@ -12,7 +12,8 @@ tabs
 ico-font          
 import class      
 change item-photo 
-inverse checker   
+inverse checker
+full higth screen (header & footer exactly to top & bottom)   
 
 System theme      
 
