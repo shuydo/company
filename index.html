@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
+    <link rel="shortcut icon" href="#" type="image/x-icon" />
     <link rel="stylesheet" href="css/norm.css" />
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -14,21 +15,28 @@
       rel="stylesheet"
     />
 
+    <link rel="stylesheet" href="css/icons.css" />
     <link rel="stylesheet" href="css/style.css" />
 
     <title>Company</title>
 
-    <!-- <script src="script.js" type="module" defer></script> -->
-    <script>
-      const handleChange = isChecked => {
-        if (isChecked) document.body.setAttribute("dark", "");
-        else document.body.removeAttribute("dark");
-      };
-    </script>
+    <script src="js/script.js" type="module" defer></script>
+
+    <!-- <script src="scriptCopy.js" type="module" defer></script> -->
+
+    <!-- <script>
+      // const handleChange = () => document.body.classList.toggle("dark");
+      // const handleChange = isChecked => document.body.classList.toggle("dark");
+
+      // const handleChange = isChecked => {
+      //   if (isChecked) document.body.setAttribute("dark", "");
+      //   else document.body.removeAttribute("dark");
+      // };
+    </script> -->
   </head>
 
   <body>
-    <div class="canvas dark" id="canvas">
+    <div class="canvas" id="canvas">
       <header>
         <nav>
           <ul>
@@ -44,42 +52,40 @@
 
             <li class="nav-search">
               <input class="search" type="search" placeholder="Search" />
-              <img src="img/search.svg" alt="Search" />
+
+              <span class="icon-search"></span>
             </li>
 
             <li class="nav-item"><a href="#" class="nav-link">Cart</a></li>
 
             <li class="nav-social">
               <a href="#" class="social">
-                <img src="img/fb.svg" alt="fBook" />
+                <span class="icon-fb"></span>
               </a>
             </li>
 
             <li class="nav-social">
-              <a href="#" class="social"
-                ><img src="img/insta.svg" alt="Instagram"
-              /></a>
+              <a href="#" class="social">
+                <span class="icon-insta"></span>
+              </a>
             </li>
 
             <li class="nav-toggler">
               <label>
-                <input type="checkbox" />
-                <svg>
-                  <path
-                    d="M22.5738 1.49576C19.8981 -0.784512 15.9186 -0.374356 13.4625 2.15982L12.5006 3.15104L11.5387 2.15982C9.08751 -0.374356 5.10314 -0.784512 2.42736 1.49576C-0.639049 4.11295 -0.800182 8.81021 1.94396 11.6471L11.3922 21.403C12.0026 22.0329 12.9938 22.0329 13.6041 21.403L23.0524 11.6471C25.8014 8.81021 25.6402 4.11295 22.5738 1.49576Z"
-                  />
-                </svg>
+                <input class="heart" type="checkbox" />
+
+                <span class="icon-heart"></span>
               </label>
             </li>
 
-            <li class="nav-toggler" id="themeToggler">
+            <li class="nav-toggler">
               <label>
-                <input
-                  class="theme"
-                  type="checkbox"
-                  onChange="handleChange(this.checked)"
-                />
-                <img src="img/theme.svg" alt="theme" />
+                <input class="theme" id="themeToggler" type="checkbox" />
+                <!-- onChange="document.body.classList.toggle('dark')" -->
+                <!-- onChange="handleChange(this.checked)" -->
+                <!-- document.body.classList.toggle("dark") -->
+                <!-- <img src="img/theme.svg" alt="theme" /> -->
+                <span class="icon-theme"></span>
               </label>
             </li>
           </ul>
@@ -87,22 +93,22 @@
       </header>
 
       <main>
-        <div class="temlplates">
-          <div class="temlplate-1"></div>
-          <div class="temlplate-2"></div>
+        <div class="templates">
+          <div class="template-1"></div>
+          <div class="template-2"></div>
           <span>View</span>
         </div>
 
-        <div class="temlplate-choice">
-          <p class="choice-1">ITEM</p>
-          <p class="choice-2">PHOTO</p>
+        <div class="template-choice">
+          <p class="choice-txt-1">ITEM</p>
+          <p class="choice-txt-2">PHOTO</p>
         </div>
 
         <aside>
           <span class="title">ITEM NAME</span>
           <span class="price">$235.00</span>
           <button class="personalise">Personalise</button>
-          <!-- Element “div” not allowed as child of element “button” in this context. (Suppressing further errors from this subtree.) -->
+
           <button class="add">
             Add to Cart
             <div class="square">
@@ -125,17 +131,28 @@
 
       <footer id="footer">
         <nav>
-          <ul>
-            <li>Cart</li>
-            <li>Overview</li>
-            <li>Boutique</li>
-            <li>About Us</li>
-            <li>FAQ</li>
-          </ul>
+          <div data-ctrls>
+            <!-- <ul data-ctrls> -->
+            <!-- <li><a class="active" href="#_1st">Cart</a></li>
+            <li><a href="#_2st">Overview</a></li>
+            <li><a href="#_3st">Boutique</a></li>
+            <li><a href="#_4st">About Us</a></li>
+            <li><a href="#_5st">FAQ</a></li> -->
+
+            <a href="#_1st">Cart</a>
+            <a href="#_2st">Overview</a>
+            <a href="#_3st">Boutique</a>
+            <a href="#_4st">About Us</a>
+            <a href="#_5st">FAQ</a>
+            <!-- </ul> -->
+          </div>
         </nav>
 
-        <span> Item section name </span>
+        <span>Item section name</span>
       </footer>
     </div>
+
   </body>
 </html>
+
+

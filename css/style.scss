@@ -1,3 +1,8 @@
+// * {
+//   margin: 0;
+//   padding: 0;
+// }
+
 :root {
   --bg-color: white;
   --text-color: black;
@@ -14,7 +19,8 @@
   --arrow4currTheme: url(../img/arrow.svg);
 }
 
-[dark] {
+// [dark],
+.dark {
   --bg-color: black;
   --text-color: white;
 
@@ -38,6 +44,7 @@ body {
 
 a {
   text-decoration: none;
+  color: inherit;
 }
 
 ul {
@@ -80,24 +87,32 @@ nav ul {
     padding-top: 14px;
     text-align: center;
 
-    svg {
-      width: 25px;
-      height: 22px;
-    }
+    // svg {
+    //   width: 25px;
+    //   height: 22px;
+    // }
 
     label,
     img {
       margin: 0 auto;
     }
-    
-    label{
+
+    label {
       display: block;
       width: 100%;
       height: 100%;
     }
 
-    input:checked + svg {
-      fill: red;
+    // input:checked + svg {
+    //   fill: red;
+    // }
+
+    .heart:checked + span {
+      color: red;
+    }
+
+    span {
+      font-size: 22px;
     }
   }
 
@@ -119,10 +134,12 @@ nav ul {
     position: relative;
     flex: 1;
 
-    & img {
+    // & img{
+    .icon-search {
       position: absolute;
       left: 110px;
       top: 20px;
+      font-size: 19px; //icon
     }
   }
 
@@ -166,8 +183,7 @@ nav ul {
   // .theme
   input[type="checkbox"] {
     position: absolute;
-    appearance: none;
-    // text-align: center; // margin: 0 auto;
+    appearance: none;    // text-align: center; // margin: 0 auto;
   }
 }
 
@@ -178,7 +194,7 @@ main {
   display: flex;
 }
 
-.temlplates {
+.templates {
   text-align: center;
 
   span {
@@ -188,19 +204,19 @@ main {
   }
 }
 //different border colors in themes & templates
-.temlplate-1,
-.temlplate-2 {
+.template-1,
+.template-2 {
   width: 111px;
   height: 139px;
 }
 
-.temlplate-1 {
+.template-1 {
   background: linear-gradient(180deg, #675e9d 0%, #9d5e84 100%);
   border: 1px solid var(--border-color);
   // border: 1px solid #FFFFFF;in Dark
 }
 
-.temlplate-2 {
+.template-2 {
   background: linear-gradient(
     180deg,
     rgba(103, 94, 157, 0.5) 0%,
@@ -211,11 +227,11 @@ main {
   margin-top: 52px;
 }
 
-.temlplate-choice {
+.template-choice {
   width: 475px;
   height: 591px;
   margin-left: 119px;
-  background: linear-gradient(180deg, #675e9d 0%, #9d5e84 100%);
+  // background: linear-gradient(180deg, #675e9d 0%, #9d5e84 100%);
 
   border: 1px solid var(--border-color);
   box-shadow: 7px 13px 0px rgba(var(--shadow-color), 0.75);
@@ -226,9 +242,10 @@ main {
   letter-spacing: 0.64em;
 }
 
-.choice-2 {
+.choice-txt-2 {
   margin-top: 400px;
 }
+
 aside {
   margin-left: 120px;
   width: 443px;
@@ -242,7 +259,7 @@ aside {
   }
 
   .price {
-    font-size: 22px;
+    font-size: 22px; //dubling
     line-height: calc(32 / 22);
   }
 
@@ -305,23 +322,46 @@ aside {
 footer {
   margin-top: 173px;
   font-size: 22px;
-  height: 50px;
+  line-height: 227.272727%; /* 50/22 */
+  // height: 50px;
   display: flex;
   align-items: center;
 
-  nav {
-    ul li {
+  // outline: 1px solid red;
+
+  nav div {
+    display: flex; // font-size: 0;
+
+    // a {
+    //   display: inline-block;
+    //   width: 163px; // font-size: 22px;
+    //   text-align: center;
+    //   border-right: 1px solid var(--border-color);
+    //   &.active {
+    //     color: var(--text-color-onDark);
+    //     background-color: var(--bg-inverse-color);
+    //   }
+    // }
+
+    // -------------------
+
+    a {
+      display: block;
       width: 163px;
-    }
-
-    li:first-child {
-      color: var(--text-color-onDark);
-      background-color: var(--bg-inverse-color);
-    }
-
-    li:last-child {
+      text-align: center;
       border-right: 1px solid var(--border-color);
+
+      // outline: 1px solid blue;
+
+      &.active {
+        color: var(--text-color-onDark);
+        background-color: var(--bg-inverse-color);
+      }
     }
+
+    // [data-ctrls] {
+    //   outline: 1px solid green;
+    // }
   }
 
   span {
@@ -339,3 +379,13 @@ footer {
     filter: var(--svg-colour-state); // -webkit-filter - safari 6.0 - 9.0
   }
 }
+// ------------------------
+// <a href="#_1st">Cart</a
+//             ><!--
+//         --><a href="#_2st">Overview</a
+//             ><!--
+//         --><a href="#_3st">Boutique</a
+//             ><!--
+//         --><a href="#_4st">About Us</a
+//             ><!--
+//         --><a href="#_5st">FAQ</a>

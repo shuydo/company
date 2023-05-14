@@ -10,7 +10,7 @@
   --arrow4currTheme: url(../img/arrow.svg);
 }
 
-[dark] {
+.dark {
   --bg-color: black;
   --text-color: white;
   --border-color: white;
@@ -29,6 +29,7 @@ body {
 
 a {
   text-decoration: none;
+  color: inherit;
 }
 
 ul {
@@ -69,10 +70,6 @@ nav ul li {
   padding-top: 14px;
   text-align: center;
 }
-nav ul li svg {
-  width: 25px;
-  height: 22px;
-}
 nav ul li label,
 nav ul li img {
   margin: 0 auto;
@@ -82,8 +79,11 @@ nav ul li label {
   width: 100%;
   height: 100%;
 }
-nav ul li input:checked + svg {
-  fill: red;
+nav ul li .heart:checked + span {
+  color: red;
+}
+nav ul li span {
+  font-size: 22px;
 }
 nav ul li:not(:last-child) {
   border-right: 1px solid;
@@ -99,10 +99,11 @@ nav ul .nav-search {
   position: relative;
   flex: 1;
 }
-nav ul .nav-search img {
+nav ul .nav-search .icon-search {
   position: absolute;
   left: 110px;
   top: 20px;
+  font-size: 19px;
 }
 nav ul .nav-social,
 nav ul .nav-toggler {
@@ -154,37 +155,36 @@ main {
   display: flex;
 }
 
-.temlplates {
+.templates {
   text-align: center;
 }
-.temlplates span {
+.templates span {
   display: block;
   font-size: 22px;
   margin-top: 30px;
 }
 
-.temlplate-1,
-.temlplate-2 {
+.template-1,
+.template-2 {
   width: 111px;
   height: 139px;
 }
 
-.temlplate-1 {
+.template-1 {
   background: linear-gradient(180deg, #675e9d 0%, #9d5e84 100%);
   border: 1px solid var(--border-color);
 }
 
-.temlplate-2 {
+.template-2 {
   background: linear-gradient(180deg, rgba(103, 94, 157, 0.5) 0%, rgba(157, 94, 132, 0.5) 100%);
   border: 1px solid rgba(var(--shadow-color), 0.7);
   margin-top: 52px;
 }
 
-.temlplate-choice {
+.template-choice {
   width: 475px;
   height: 591px;
   margin-left: 119px;
-  background: linear-gradient(180deg, #675e9d 0%, #9d5e84 100%);
   border: 1px solid var(--border-color);
   box-shadow: 7px 13px 0px rgba(var(--shadow-color), 0.75);
   text-align: center;
@@ -193,7 +193,7 @@ main {
   letter-spacing: 0.64em;
 }
 
-.choice-2 {
+.choice-txt-2 {
   margin-top: 400px;
 }
 
@@ -261,19 +261,22 @@ aside .dimensions {
 footer {
   margin-top: 173px;
   font-size: 22px;
-  height: 50px;
+  line-height: 227.272727%; /* 50/22 */
   display: flex;
   align-items: center;
 }
-footer nav ul li {
-  width: 163px;
+footer nav div {
+  display: flex;
 }
-footer nav li:first-child {
+footer nav div a {
+  display: block;
+  width: 163px;
+  text-align: center;
+  border-right: 1px solid var(--border-color);
+}
+footer nav div a.active {
   color: var(--text-color-onDark);
   background-color: var(--bg-inverse-color);
-}
-footer nav li:last-child {
-  border-right: 1px solid var(--border-color);
 }
 footer span {
   text-transform: uppercase;
