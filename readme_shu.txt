@@ -1,6 +1,8 @@
 https://jsbin.com/wivorijayo/edit?html,css,output - theme switching by OS
 
-list:
+https://shuydo.github.io/company
+
+tasks list:
 -------------------
 border  temlplates 
 shadow & border choice temlplate

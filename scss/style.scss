@@ -1,39 +1,21 @@
-// * {
-//   margin: 0;
-//   padding: 0;
-// }
+// * {  margin: 0;  padding: 0;}
+@import './norm';
+@import './icons';
 
 :root {
-  --bg-color: white;
-  --text-color: black;
+  --bg-color: white; 
+  --color: black;
 
-  --border-color: black;
-
-  --bg-inverse-color: black;
-
-  --text-color-onDark: white;
-  --bg-search: #e7e7e7;
-
-  --shadow-color: 0, 0, 0; //& border-color 4 template-2
-  --svg-colour-state: invert(0);
+  --shadow-color: 0, 0, 0; //& border-color 4 template-2  // --svg-colour-state: invert(0);
   --arrow4currTheme: url(../img/arrow.svg);
 }
 
 // [dark],
 .dark {
   --bg-color: black;
-  --text-color: white;
+  --color: white;
 
-  --border-color: white;
-
-  --bg-inverse-color: white;
-
-  --text-color-onDark: black;
-  --bg-search: #181818;
-
-  --shadow-color: 255, 255, 255;
-  --svg-colour-state: invert(1);
-
+  --shadow-color: 255, 255, 255;  // --svg-colour-state: invert(1);
   --arrow4currTheme: url(../img/arrow_white.svg);
 }
 
@@ -61,16 +43,17 @@ button {
   height: 68px;
   width: 100%;
   background-color: var(--bg-color);
-  color: var(--text-color);
-  border: 1px solid var(--border-color);
+  color: var(--color);
+  border: 1px solid var(--color);
   box-sizing: border-box;
 }
 
 .canvas {
-  color: var(--text-color);
+  color: var(--color);
   background-color: var(--bg-color);
   width: 1440px;
   margin: 0 auto;
+  transition: color 0.3s, background-color 0.3s;
 }
 
 //163*2 394 357 163 50*4
@@ -87,13 +70,9 @@ nav ul {
     padding-top: 14px;
     text-align: center;
 
-    // svg {
-    //   width: 25px;
-    //   height: 22px;
-    // }
-
-    label,
-    img {
+    // svg {      width: 25px;      height: 22px;    }
+    // img,
+    label {
       margin: 0 auto;
     }
 
@@ -103,16 +82,13 @@ nav ul {
       height: 100%;
     }
 
-    // input:checked + svg {
-    //   fill: red;
-    // }
+    // input:checked + svg {   fill: red; }
+    span {
+      font-size: 22px;
+    }
 
     .heart:checked + span {
       color: red;
-    }
-
-    span {
-      font-size: 22px;
     }
   }
 
@@ -150,12 +126,12 @@ nav ul {
   // ---------- inside ------------
   .nav-link {
     font-size: 22px;
-    color: var(--text-color);
+    color: var(--color);
   }
 
   .logo {
     font-size: 32px;
-    color: var(--text-color);
+    color: var(--color);
     letter-spacing: 0.64em;
     text-transform: uppercase;
   }
@@ -167,23 +143,22 @@ nav ul {
 
     background-color: var(--bg-search);
     border-radius: 48px;
-    border: 1px solid var(--border-color);
+    border: 1px solid var(--color);
     padding-bottom: 0;
 
     &::placeholder {
       font-size: 22px;
-      color: var(--text-color);
+      color: var(--color);
       opacity: 1; //4 fF
       vertical-align: bottom;
       line-height: 1;
     }
   }
 
-  // .fav,
-  // .theme
+  // .fav, .theme
   input[type="checkbox"] {
     position: absolute;
-    appearance: none;    // text-align: center; // margin: 0 auto;
+    appearance: none; // text-align: center; // margin: 0 auto;
   }
 }
 
@@ -212,8 +187,7 @@ main {
 
 .template-1 {
   background: linear-gradient(180deg, #675e9d 0%, #9d5e84 100%);
-  border: 1px solid var(--border-color);
-  // border: 1px solid #FFFFFF;in Dark
+  border: 1px solid var(--color); // border: 1px solid #FFFFFF;in Dark
 }
 
 .template-2 {
@@ -230,10 +204,9 @@ main {
 .template-choice {
   width: 475px;
   height: 591px;
-  margin-left: 119px;
-  // background: linear-gradient(180deg, #675e9d 0%, #9d5e84 100%);
+  margin-left: 119px; // background: linear-gradient(180deg, #675e9d 0%, #9d5e84 100%);
 
-  border: 1px solid var(--border-color);
+  border: 1px solid var(--color);
   box-shadow: 7px 13px 0px rgba(var(--shadow-color), 0.75);
 
   text-align: center;
@@ -249,7 +222,6 @@ main {
 aside {
   margin-left: 120px;
   width: 443px;
-
   font-size: 22px;
 
   .title {
@@ -270,8 +242,8 @@ aside {
   .add {
     position: relative;
     margin-top: 22px;
-    color: var(--text-color-onDark);
-    background-color: var(--bg-inverse-color);
+    color: var(--bg-color);
+    background-color: var(--color);
   }
 
   .square {
@@ -283,7 +255,7 @@ aside {
     height: 66px;
     background-color: var(--bg-color);
     top: 0;
-    right: 0; // border: 1px solid var(--border-color);
+    right: 0; // border: 1px solid var(--color);
   }
 
   .note-1 {
@@ -299,9 +271,9 @@ aside {
     appearance: none;
 
     background-color: var(--bg-color);
-    color: var(--text-color);
+    color: var(--color);
 
-    border: 1px solid var(--border-color);
+    border: 1px solid var(--color);
 
     background-image: var(--arrow4currTheme);
 
@@ -322,70 +294,38 @@ aside {
 footer {
   margin-top: 173px;
   font-size: 22px;
-  line-height: 227.272727%; /* 50/22 */
-  // height: 50px;
+  line-height: 227.272727%; /* 50/22 */ // height: 50px;
   display: flex;
   align-items: center;
 
-  // outline: 1px solid red;
-
   nav div {
-    display: flex; // font-size: 0;
-
-    // a {
-    //   display: inline-block;
-    //   width: 163px; // font-size: 22px;
-    //   text-align: center;
-    //   border-right: 1px solid var(--border-color);
-    //   &.active {
-    //     color: var(--text-color-onDark);
-    //     background-color: var(--bg-inverse-color);
-    //   }
-    // }
-
-    // -------------------
+    display: flex;
 
     a {
       display: block;
       width: 163px;
       text-align: center;
-      border-right: 1px solid var(--border-color);
-
-      // outline: 1px solid blue;
+      border-right: 1px solid var(--color);
 
       &.active {
-        color: var(--text-color-onDark);
-        background-color: var(--bg-inverse-color);
+        color: var(--bg-color);
+        background-color: var(--color);
       }
     }
-
-    // [data-ctrls] {
-    //   outline: 1px solid green;
-    // }
   }
 
   span {
     text-transform: uppercase;
-    margin: 0 auto;
+    margin: 0 auto; 
   }
 }
-// ======================= picture inversing ===============
-.nav-search,
-.fav,
-.nav-toggler,
-.social {
-  img,
-  svg {
-    filter: var(--svg-colour-state); // -webkit-filter - safari 6.0 - 9.0
-  }
-}
-// ------------------------
-// <a href="#_1st">Cart</a
-//             ><!--
-//         --><a href="#_2st">Overview</a
-//             ><!--
-//         --><a href="#_3st">Boutique</a
-//             ><!--
-//         --><a href="#_4st">About Us</a
-//             ><!--
-//         --><a href="#_5st">FAQ</a>
+// ======================= pic inversing ===============
+// .nav-search,
+// .fav,
+// .nav-toggler,
+// .social {
+//   img,
+//   svg {
+//     filter: var(--svg-colour-state); // -webkit-filter - safari 6.0 - 9.0
+//   }
+// }
